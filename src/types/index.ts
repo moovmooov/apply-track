@@ -35,3 +35,21 @@ export interface PageData {
     date: { start: string };
   };
 }
+
+export type ButtonStatusProps =
+  | "default"
+  | "disabled"
+  | "loading"
+  | "added"
+  | "error";
+
+export interface ButtonState {
+  text: string;
+  status: ButtonStatusProps;
+}
+
+export interface JobInfo {
+  title: string;
+  company: string;
+  url: string;
+}

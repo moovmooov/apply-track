@@ -1,11 +1,12 @@
-import { sendToBackground } from "@plasmohq/messaging";
-import { LogIn } from "lucide-react";
+import { LogIn } from "lucide-react"
+
+import { sendToBackground } from "@plasmohq/messaging"
 
 const auth = async () => {
   await sendToBackground({
-    name: "oauth",
-  });
-};
+    name: "oauth"
+  })
+}
 
 const Login = () => {
   return (
@@ -21,8 +22,7 @@ const Login = () => {
       <button
         type="button"
         className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded transition duration-300 flex items-center justify-center gap-2"
-        onClick={auth}
-      >
+        onClick={auth}>
         <LogIn size={20} />
         Login with Notion
       </button>
@@ -34,14 +34,13 @@ const Login = () => {
             href="https://www.notion.so/signup"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 hover:underline"
-          >
+            className="text-blue-600 hover:underline">
             Sign up
           </a>
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
