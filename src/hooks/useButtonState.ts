@@ -44,7 +44,7 @@ export const useButtonState = () => {
       } catch (error) {
         console.error("Error checking status:", error);
         setButtonState({
-          text: "Error checking status",
+          text: "Error adding the job to the database",
           status: "error",
         });
       }

@@ -49,7 +49,7 @@ const TrackerButton = () => {
     } catch (error) {
       console.error(error)
       setButtonState({
-        text: "Error to add the job into database",
+        text: "Error adding the job to the database",
         status: "error"
       })
     }
@@ -73,12 +73,7 @@ const TrackerButton = () => {
     }
 
     initializeComponent()
-  }, [
-    waitForElements,
-    updateButtonStatus,
-    setIsPageReady,
-    window.location.href
-  ])
+  }, [waitForElements, updateButtonStatus, setIsPageReady])
 
   if (!isPageReady || !containerRef.current) return null
 
