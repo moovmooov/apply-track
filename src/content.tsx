@@ -38,7 +38,7 @@ const TrackerButton = () => {
       })
 
       await sendToBackground({
-        name: "embeed-button",
+        name: "embed-button",
         body: jobInfo
       })
 
