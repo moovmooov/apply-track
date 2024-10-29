@@ -33,8 +33,11 @@ const handler: PlasmoMessaging.MessageHandler = async (req, res) => {
     };
 
     if (!database?.id) {
-      throw new Error("Database ID is undefined");
+      throw new Error(
+        "Database configuration is missing or invalid. Please check your settings.",
+      );
     }
+
     const response = await addJobToDatabase(database?.id, pageData);
     console.log("New row added:", response);
     res.send({ success: true, data: response });

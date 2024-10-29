@@ -1,10 +1,11 @@
-import { ExternalLink, LogOut } from "lucide-react";
-import { useStorage } from "@plasmohq/storage/hook";
-import type { Database } from "@/types";
+import type { Database } from "@/types"
+import { ExternalLink, LogOut } from "lucide-react"
+
+import { useStorage } from "@plasmohq/storage/hook"
 
 const Home = () => {
-  const [database] = useStorage<Database>("database");
-  const [userData, setUserData] = useStorage("user_data");
+  const [database] = useStorage<Database>("database")
+  const [userData, setUserData] = useStorage("user_data")
 
   return (
     <div className="w-full max-w-md p-6 bg-white font-sans shadow-sm rounded-lg">
@@ -27,8 +28,7 @@ const Home = () => {
         <button
           type="button"
           className="text-gray-500 hover:text-gray-700"
-          onClick={() => setUserData(null)}
-        >
+          onClick={() => setUserData(null)}>
           <LogOut size={18} />
         </button>
       </div>
@@ -37,8 +37,7 @@ const Home = () => {
         className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition duration-300 flex items-center justify-center gap-2"
         href={database?.url}
         target="_blank"
-        rel="noreferrer"
-      >
+        rel="noreferrer">
         <ExternalLink size={18} />
         Open Job Tracker on Notion
       </a>
@@ -50,22 +49,20 @@ const Home = () => {
             href="https://github.com/moovmooov/apply-tracker"
             className="text-blue-600 hover:underline text-sm font-semibold"
             target="_blank"
-            rel="noreferrer"
-          >
+            rel="noreferrer">
             View on Github
           </a>
           <a
             href="https://www.linkedin.com/in/mateusmoov/"
             className="text-blue-600 hover:underline text-sm font-semibold"
             target="_blank"
-            rel="noreferrer"
-          >
+            rel="noreferrer">
             Hire Me
           </a>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

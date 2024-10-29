@@ -64,6 +64,23 @@ export const addJobToDatabase = async (
   }
 };
 
+export const getUrlJobsDatabase = async (databaseId: string, url: string) => {
+  try {
+    const response = await api.post(`/databases/${databaseId}/query`, {
+      filter: {
+        property: "Posting URL",
+        url: {
+          equals: url,
+        },
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error trying to search the URL on database:", error);
+    throw error;
+  }
+};
+
 export const getAuthUrl = () => {
   return `https://api.notion.com/v1/oauth/authorize?client_id=${CLIENT_ID}&response_type=code&owner=user&redirect_uri=${REDIRECT_URI}`;
 };
