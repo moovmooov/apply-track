@@ -12,7 +12,9 @@ const handler: PlasmoMessaging.MessageHandler = async (req, res) => {
     const databaseId = await storage.get<Database>("database");
 
     if (!databaseId?.id) {
-      throw new Error("Database ID is undefined");
+      throw new Error(
+        "Database configuration is missing or invalid. Please check your settings.",
+      );
     }
     console.log("Query job into database...");
     const result = await getUrlJobsDatabase(databaseId?.id, url);
