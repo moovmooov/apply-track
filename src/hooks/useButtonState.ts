@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { sendToBackground } from "@plasmohq/messaging";
-import type { ButtonState } from "@/types";
+import type { ButtonState, UserData } from "@/types";
 import { useStorage } from "@plasmohq/storage/hook";
 
 export const useButtonState = () => {
@@ -8,7 +8,8 @@ export const useButtonState = () => {
     text: "Add to Notion Database",
     status: "default",
   });
-  const [isAuthenticated] = useStorage("user_data");
+  const [userData] = useStorage<UserData>("user_data");
+  const isAuthenticated = userData ?? false;
 
   const updateButtonStatus = useCallback(
     async (url: string) => {
